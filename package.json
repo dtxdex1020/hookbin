@@ -1,0 +1,62 @@
+{
+  "name": "hookbin",
+  "version": "0.1.0",
+  "description": "Local webhook inspector: catch requests, pretty-print them, save them, replay them.",
+  "keywords": [
+    "webhook",
+    "webhooks",
+    "inspector",
+    "requestbin",
+    "debugging",
+    "cli",
+    "replay"
+  ],
+  "license": "MIT",
+  "author": "Dex",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtxdex1020/hookbin.git"
+  },
+  "homepage": "https://github.com/dtxdex1020/hookbin#readme",
+  "type": "module",
+  "bin": {
+    "hookbin": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "lint": "eslint . && prettier --check . && tsc --noEmit",
+    "format": "prettier --write .",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "commander": "^14.0.3",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^20.19.43",
+    "eslint": "^9.39.5",
+    "globals": "^16.5.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^3.2.7"
+  }
+}
